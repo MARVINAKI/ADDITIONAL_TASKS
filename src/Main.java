@@ -64,6 +64,11 @@ public class Main {
 				}.get()
 		);
 		System.out.println("Случайное число от 0 до 100 (by lambda): " + ((Supplier<Integer>) () -> new Random().nextInt(0, 101)).get());
+
+
+
+		//	ternaryOperator
+
 	}
 
 	private static ArrayList<Double> getIntArray(int size) {
@@ -77,6 +82,6 @@ public class Main {
 			Function<? super T, ? extends U> ifTrue,
 			Function<? super T, ? extends U> ifFalse
 	) {
-		return null;
+		return t -> condition.test(t) ? ifTrue.apply(t) : ifFalse.apply(t);
 	}
 }
